@@ -1,0 +1,44 @@
+## Reactor Server
+
+- EventLoop
+    - Accept
+    - Open
+    - Action
+    - Read
+    - Write
+    - Close
+- Poller
+    - 创建poller
+    - 关闭poller
+    - Wait
+- Server
+- Connection
+    - 一个conn只有由一个goroutine操控
+    - 套接字关闭
+    - read
+    - write async 异步写入
+    - close
+    - context set get
+- Codec
+    - Interface
+        - Encode
+        - Decode
+- ErrCode
+    - EAGAIN
+- Timer
+- 完美退出
+- TCP协议
+- 异步队列
+    - 锁+定时触发
+- 环形数组
+    - 写时分配空间
+- Option
+    - KeepAlive
+    - LoopNum
+    - LoadBalance
+    - Codec
+- LoadBalancer
+    - Type: LeastConnections Round SourceAddrHash
+    - interface register next iterate len
+- RingBuffer
+  
