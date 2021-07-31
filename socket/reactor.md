@@ -12,6 +12,11 @@
     - 关闭poller
     - Wait
 - Server
+- Listener
+  - 处理各种协议簇
+  - SO_REUSEPORT
+  - TCP_NODELAY
+  - IPV6_V6ONLY
 - Connection
     - 一个conn只有由一个goroutine操控
     - 套接字关闭
@@ -19,6 +24,7 @@
     - write async 异步写入
     - close
     - context set get
+    - 优先写 之后在读 在输出buffer不为空的时候忽略写事件获得更好的性能
 - Codec
     - Interface
         - Encode
@@ -29,9 +35,7 @@
 - 完美退出
 - TCP协议
 - 异步队列
-    - 锁+定时触发
-- 环形数组
-    - 写时分配空间
+    - 无锁队列
 - Option
     - KeepAlive
     - LoopNum
@@ -41,4 +45,13 @@
     - Type: LeastConnections Round SourceAddrHash
     - interface register next iterate len
 - RingBuffer
+    - 写时分配空间
+- Pool
+    - Goroutine github.com/panjf2000/ants/v2
+    - RingBuffer
+    - ByteBuffer github.com/valyala/bytebufferpool
+- 编译器决定不同的操作系统使用什么样的代码
+- 有序发送  
+- 无锁并发队列
+- 内存对齐
   
